@@ -1,7 +1,7 @@
 -- local Component = import("Component")
 require 'Component'
 
-local StateMachine = class("StateMachine", Component)
+StateMachine = class("StateMachine", Component)
 
 --[[--
 
@@ -319,4 +319,4 @@ function StateMachine:onError_(event, error, message)
     echoError(message)
 end
 
-return StateMachine
+-- return StateMachine
