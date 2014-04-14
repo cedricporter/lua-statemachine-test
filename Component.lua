@@ -1,5 +1,7 @@
+require 'extern'
 
-local Component = class("Component")
+-- local Component = class("Component")
+Component = class("Component")
 
 function Component:ctor(name, depends)
     self.name_ = name
@@ -61,4 +63,4 @@ end
 function Component:onUnbind_()
 end
 
-return Component
+-- return Component
