@@ -1,4 +1,5 @@
 require 'extern'
+require 'functions'
 
 -- local Component = class("Component")
 Component = class("Component")

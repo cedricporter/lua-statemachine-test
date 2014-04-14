@@ -13,5 +13,6 @@ function main()
                 {name = "clear", from = "yellow", to = "green" },
             }
     })
+end
 
 main()    
