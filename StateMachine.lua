@@ -1,4 +1,5 @@
 -- local Component = import("Component")
+require 'debugfunc'
 require 'Component'
 
 StateMachine = class("StateMachine", Component)

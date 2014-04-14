@@ -1,6 +1,6 @@
 require 'StateMachine'
 
-function main()
+function demo1()
     local fsm = StateMachine.new()
     fsm = fsm:setupState({
             initial = "green",
@@ -9,6 +9,7 @@ function main()
                 {name = "panic", from = "green",  to = "red"   },
                 {name = "calm",  from = "red",    to = "yellow"},
                 {name = "clear", from = "yellow", to = "green" },
+                {name = "rest", from = "*", to = "rest"},
             },
             callbacks = {
                 onbeforestart = function(event) print("[FSM] STARTING UP") end,
@@ -20,7 +21,9 @@ function main()
                 onwarn        = function(event) print("[FSM] FINISH  EVENT: warn!") end,
             },
     })
-    fsm:doEvent("warn", "some msg")
+    fsm:doEvent("warn", "some msg1n")
+    fsm:doEvent("rest", "some msg2")
+    echoInfo(fsm:getState())
 end
 
-main()    
+demo1()    
