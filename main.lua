@@ -1,4 +1,6 @@
-require 'StateMachine'
+require('framework.init')
+
+local StateMachine = import("framework.StateMachine")
 
 function demo1()
     local fsm = StateMachine.new()
@@ -6,6 +8,7 @@ function demo1()
             initial = "green",
             events  = {
                 {name = "warn",  from = "green",  to = "yellow"},
+                {name = "warn",  from = "yellow",  to = "yellow"},
                 {name = "panic", from = "green",  to = "red"   },
                 {name = "calm",  from = "red",    to = "yellow"},
                 {name = "clear", from = "yellow", to = "green" },
@@ -21,6 +24,7 @@ function demo1()
                 onwarn        = function(event) print("[FSM] FINISH  EVENT: warn!") end,
             },
     })
+    fsm:doEvent("warn", "some msg1n")
     fsm:doEvent("warn", "some msg1n")
     fsm:doEvent("rest", "some msg2")
     echoInfo(fsm:getState())

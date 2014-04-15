@@ -1,8 +1,6 @@
--- local Component = import("Component")
-require 'debugfunc'
-require 'Component'
 
-StateMachine = class("StateMachine", Component)
+local Component = import(".Component")
+local StateMachine = class("StateMachine", Component)
 
 --[[--
 
@@ -320,4 +318,4 @@ function StateMachine:onError_(event, error, message)
     echoError(message)
 end
 
--- return StateMachine
+return StateMachine
